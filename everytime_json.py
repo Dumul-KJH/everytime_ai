@@ -4,7 +4,7 @@ import json
 import math
 
 # CSV 파일 읽기
-df = pd.read_csv('everytime_hotarticle_merged.csv')
+df = pd.read_csv('trimmed_dataset.csv')
 
 # 좋아요 수를 반올림하여 반복 횟수 결정
 df['likes_rounded'] = df['Number of Likes'].apply(lambda x: math.ceil(float(x)))
