@@ -7,7 +7,7 @@ import math
 df = pd.read_csv('trimmed_dataset.csv')
 
 # 좋아요 수를 반올림하여 반복 횟수 결정
-df['likes_rounded'] = df['Number of Likes'].apply(lambda x: math.ceil(float(x)))
+df['likes_rounded'] = df['Number of Likes'].apply(lambda x: (math.ceil(float(x)))//10)
 
 # 빈 리스트 생성
 data_list = []
@@ -25,5 +25,5 @@ for _, row in df.iterrows():
         data_list.append(data_dict)
 
 # JSON 파일로 저장
-with open('dataset.json', 'w', encoding='utf-8') as f:
+with open('dataset_2.json', 'w', encoding='utf-8') as f:
     json.dump(data_list, f, ensure_ascii=False, indent=4)
